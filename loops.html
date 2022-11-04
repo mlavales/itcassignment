@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>	
+<body>
+<h2>Loops</h2>
+<p>
+	<label>nth Factorial</label>
+	<input id="factorial" type="number" placeholder="input the value of n">
+	
+	<button onclick="whileloop(factorial.value)"> Compute for the factorial </button>
+	
+	<h3 id="print1"></h2>
+</p>
+<p>
+	<label>Sum of 1st n numbers</label>
+	<input id="sum" type="number" placeholder="input the value of n">
+	
+	<button onclick="dowhileloop(sum.value)"> Compute for the sum </button>
+	
+	<h3 id="print2"></h2>
+</p>
+<p>
+	<label>Average of 1st n numbers</label>
+	<input id="average" type="number" placeholder="input the value of n">
+	
+	<button onclick="forloop(average.value)"> Compute for the average </button>
+	
+	<h3 id="print3"></h2>
+</p>
+
+<script>
+function whileloop(n){
+	var x,product;
+	x=1;
+	product=1;
+
+	
+	while (x <= n){
+		product = product * x;
+		x++;
+	}
+	
+	document.getElementById("print1").innerHTML = "The factorial of n is : " +product;
+}
+
+function dowhileloop(n){
+	var x,sum;
+	x=1;
+	sum=0;
+	
+	do {
+		sum = sum + x;
+		x++;
+	} while (x <= n)
+	
+	document.getElementById("print2").innerHTML = "The sum of the 1st n numbers is : " +sum;
+}
+
+function forloop(n){
+	var avg;
+	avg = 0;
+	for (let x = 0; x <= n; x++) {
+		avg = avg + x;
+	}
+	avg = avg / n;
+	document.getElementById("print3").innerHTML = "The average of the 1st n numbers is : " +avg;
+}
+</script>
+</body>
+</html>	
