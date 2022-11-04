@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>	
+<body>
+<h2>Conversions</h2>
+<h3> Fahrenheit and Celsius </h3>
+<p>
+	<label>Fahrenheit</label>
+	<input id="inputFahrenheit" type="number" placeholder="Fahrenheit" value = "0">
+</p>
+
+<p>
+	<label>Celsius</label>
+	<input id="inputCelsius" type="number" placeholder="Celsius" value = "0">
+</p>
+
+<button type="button" onclick="tempF2C(inputFahrenheit.value)">Convert Fahrenheit to Celsius</button>
+<button type="button" onclick="tempC2F(inputCelsius.value)">Convert Celsius to Fahrenheit</button>
+
+<h3> Meters and Feet </h3>
+<p>
+	<label>Meters</label>
+	<input id="inputMeters" type="number" placeholder="Meters" value = "0">
+</p>
+
+<p>
+	<label>Feet</label>
+	<input id="inputFeet" type="number" placeholder="Feet" value = "0">
+</p>
+
+<button type="button" onclick="tempM2F(inputMeters.value)">Convert Meters to Feet</button>
+<button type="button" onclick="tempF2M(inputFeet.value)">Convert Feet to Meters</button>
+
+<script>
+function tempF2C(n) {
+	n = parseFloat(n);
+	document.getElementById("inputCelsius").value=(n-32)/1.8;
+}
+
+function tempC2F(n) {
+	n = parseFloat(n);
+	document.getElementById("inputFahrenheit").value=(n*1.8)+32;
+}
+
+function tempM2F(n) {
+	n = parseFloat(n);
+	document.getElementById("inputFeet").value=n*3.2808;
+}
+
+function tempF2M(n) {
+	n = parseFloat(n);
+	document.getElementById("inputMeters").value=n/3.2808;
+}
+</script>
+</body>
+</html>
