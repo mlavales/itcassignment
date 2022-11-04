@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>	
+<body>
+<h2>Income Tax Calculator</h2>
+<p>
+	<label for="income">Taxable Income</label> 
+	<input id="income" name="income" type="number">
+
+	<button onclick="computeinctax(income.value)"> Compute Income Tax </button>
+</p>
+
+<h3 id="print"></h2>
+<script>
+function computeinctax(n){
+	var incTax;
+	n = parseFloat(n);
+	incTax = parseFloat(incTax);
+	
+	if (n >= 0 && n <=250000){
+		incTax = 0;
+	}
+	if (n >= 250001 && n <=400000){
+		incTax = (n - 250000)*.2;
+	}
+	if (n >= 400001 && n <=800000){
+		incTax = 30000 + (n - 400000)*.25;
+	}
+	if (n >= 800001 && n <=2000000){
+		incTax = 130000 + (n - 800000)*.30;
+	}
+	if (n >= 2000001 && n <=8000000){
+		incTax = 490000 + (n - 2000000)*.32;
+	}
+	if (n >= 8000001){
+		incTax = 2410000 + (n - 8000000)*.35;
+	}
+	
+	document.getElementById("print").innerHTML="Income tax is : " + incTax;
+}
+</script>
+</body>
+</html>	
